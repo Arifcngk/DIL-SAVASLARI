@@ -1,4 +1,5 @@
 import 'package:dil_savaslari/consts/color.dart';
+import 'package:dil_savaslari/welcome_page.dart';
 import 'package:flutter/material.dart';
 
 class LoadingPage extends StatefulWidget {
@@ -10,23 +11,50 @@ class LoadingPage extends StatefulWidget {
 
 class _LoadingPageState extends State<LoadingPage> {
   @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    // 3 saniye loading ekranı gösterildikten sonra welcome sayfasına yönlendirme yapılacak
+    Future.delayed(const Duration(seconds: 3), () {
+      Navigator.of(context).pushReplacement(
+          MaterialPageRoute(builder: (context) => const WelcomePage()));
+    });
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColors.bgColor,
-      body: Row(
-        children: [
-          Container(
-            alignment: Alignment.topCenter,
-            margin: const EdgeInsets.only(top: 100),
-            child: Text(
-              'Dil Savaslari',
-              style: TextStyle(
-                color: AppColors.bgColorBtn,
-                fontSize: 30,
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.end,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Expanded(
+              child: Center(
+                child: Image.asset(
+                  'images/loading.png',
+                  width: 279,
+                  height: 300,
+                ),
               ),
             ),
-          ),
-        ],
+            const SizedBox(height: 20),
+            Text(
+              'Yükleniyor...',
+              style: TextStyle(
+                color: AppColors.bgColorBtn,
+                fontSize: 20,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            const SizedBox(height: 20),
+            CircularProgressIndicator(
+              color: AppColors.bgColorBtn,
+            ),
+            SizedBox(height: 50)
+          ],
+        ),
       ),
     );
   }

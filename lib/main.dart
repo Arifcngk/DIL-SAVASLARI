@@ -1,7 +1,17 @@
 import 'package:dil_savaslari/loading_page.dart';
+import 'package:dil_savaslari/welcome_page.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 void main() {
+  SystemChrome.setSystemUIOverlayStyle(
+    const SystemUiOverlayStyle(
+      statusBarColor: Colors.transparent,
+      statusBarIconBrightness: Brightness.dark,
+      systemNavigationBarColor: Colors.transparent,
+      systemNavigationBarIconBrightness: Brightness.dark,
+    ),
+  );
   runApp(const MyApp());
 }
 
@@ -13,7 +23,7 @@ class MyApp extends StatelessWidget {
     return const MaterialApp(
       title: 'Dil Savaslari',
       debugShowCheckedModeBanner: false,
-      home: LoadingPage(),
+      home: WelcomePage(),
     );
   }
 }
