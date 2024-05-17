@@ -1,1 +1,1 @@
-![Uploading proje-şablon.jpg…]()
+
