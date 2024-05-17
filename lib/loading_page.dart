@@ -1,5 +1,5 @@
-import 'package:dil_savaslari/consts/color.dart';
-import 'package:dil_savaslari/welcome_page.dart';
+import 'package:dil_savaslari/view/consts/color.dart';
+import 'package:dil_savaslari/view/auth/welcome_page.dart';
 import 'package:flutter/material.dart';
 
 class LoadingPage extends StatefulWidget {
@@ -40,17 +40,14 @@ class _LoadingPageState extends State<LoadingPage> {
               ),
             ),
             const SizedBox(height: 20),
-            Text(
+            const Text(
               'Yükleniyor...',
               style: TextStyle(
-                color: AppColors.bgColorBtn,
-                fontSize: 20,
-                fontWeight: FontWeight.bold,
-              ),
+                  color: Colors.white, fontSize: 48, fontFamily: 'Jomhuria'),
             ),
             const SizedBox(height: 20),
-            CircularProgressIndicator(
-              color: AppColors.bgColorBtn,
+            const CircularProgressIndicator(
+              color: Colors.white,
             ),
             SizedBox(height: 50)
           ],

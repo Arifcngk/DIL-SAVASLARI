@@ -1,7 +1,7 @@
-import 'package:dil_savaslari/loading_page.dart';
-import 'package:dil_savaslari/welcome_page.dart';
+import 'package:dil_savaslari/view/auth/welcome_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:get/get.dart';
 
 void main() {
   SystemChrome.setSystemUIOverlayStyle(
@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return const GetMaterialApp(
       title: 'Dil Savaslari',
       debugShowCheckedModeBanner: false,
       home: WelcomePage(),
