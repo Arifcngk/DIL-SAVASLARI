@@ -1,7 +1,10 @@
+import 'package:dil_savaslari/view/auth/register_page.dart';
+import 'package:dil_savaslari/view/consts/btnCustom.dart';
 import 'package:dil_savaslari/view/consts/color.dart';
 import 'package:dil_savaslari/view/consts/inputCustom.dart';
 import 'package:dil_savaslari/view/consts/txtCustom.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -14,6 +17,7 @@ class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       backgroundColor: AppColors.bgColor,
       appBar: AppBar(
         elevation: 0,
@@ -27,12 +31,12 @@ class _LoginPageState extends State<LoginPage> {
       body: Stack(
         children: [
           Padding(
-            padding: EdgeInsets.all(30.0),
+            padding: const EdgeInsets.all(30.0),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                SizedBox(height: 40),
-                Text(
+                const SizedBox(height: 40),
+                const Text(
                   "Tekrar Hoşgeldiniz !",
                   style: TextStyle(
                     fontSize: 36,
@@ -40,14 +44,14 @@ class _LoginPageState extends State<LoginPage> {
                     color: Colors.white,
                   ),
                 ),
-                SizedBox(height: 20), // İki yazı arasında boşluk
-                txtCustomWidget(fontSize: 26, text: "Kullanıcı Adı:"),
-                SizedBox(height: 20),
-                InputCustomWidget(isPassword: false),
-                SizedBox(height: 30),
-                txtCustomWidget(text: 'Kullanıcı Parola:', fontSize: 26),
-                SizedBox(height: 20),
-                InputCustomWidget(isPassword: true),
+                const SizedBox(height: 20), // İki yazı arasında boşluk
+                const txtCustomWidget(fontSize: 26, text: "Kullanıcı Adı:"),
+                const SizedBox(height: 20),
+                const InputCustomWidget(isPassword: false),
+                const SizedBox(height: 30),
+                const txtCustomWidget(text: 'Kullanıcı Parola:', fontSize: 26),
+                const SizedBox(height: 20),
+                const InputCustomWidget(isPassword: true),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -66,6 +70,7 @@ class _LoginPageState extends State<LoginPage> {
                             fontSize: 18,
                           ),
                         ),
+                        const SizedBox(width: 40),
                         TextButton(
                           onPressed: () {},
                           child: const Text(
@@ -76,8 +81,42 @@ class _LoginPageState extends State<LoginPage> {
                       ],
                     )
                   ],
-                )
-                //Burada beni hatırla ve şifremi unuttum kısımları olacak
+                ),
+                const SizedBox(height: 30),
+                BtnCustomWidget(
+                  text: 'Giriş',
+                  onTap: () {},
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    const Text(
+                      "Hesabınız yok mu? ",
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontFamily: 'Inter',
+                        fontWeight: FontWeight.w600,
+                        fontSize: 18,
+                      ),
+                    ),
+                    TextButton(
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => const RegisterPage(),
+                            ),
+                          );
+                        },
+                        child: Text(
+                          'Kayıt Ol',
+                          style: TextStyle(
+                              color: AppColors.bgColorBtn,
+                              fontSize: 18,
+                              decoration: TextDecoration.underline),
+                        )),
+                  ],
+                ),
               ],
             ),
           ),

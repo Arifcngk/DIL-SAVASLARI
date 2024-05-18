@@ -22,7 +22,7 @@ class BtnCustomWidget extends StatelessWidget {
           gradient: LinearGradient(
             colors: [
               AppColors.bgColorBtn,
-              AppColors.bgColorBtn2,
+              AppColors.bgColorBtn,
             ],
             begin: Alignment.topLeft,
             end: Alignment.bottomRight,
