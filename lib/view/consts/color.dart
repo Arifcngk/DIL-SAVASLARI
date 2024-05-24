@@ -6,4 +6,7 @@ class AppColors {
   static Color bgColorBtn2 = const Color(0xFFE8DFCA);
   static Color inputColor = const Color(0xFFF8F0E5);
   static Color appTextWhite = const Color(0xFFFFFFFF);
+
+  static Color boxYellow = Color.fromARGB(0, 143, 49, 6);
+  static Color boxYellow2 = Color.fromARGB(0, 94, 30, 11);
 }
