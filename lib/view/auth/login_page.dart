@@ -22,7 +22,7 @@ class _LoginPageState extends State<LoginPage> {
       appBar: AppBar(
         elevation: 0,
         title: const Text(
-          "Dil Savaşları",
+          "Fluentify English",
           style: TextStyle(fontSize: 32, fontFamily: 'Jockey'),
         ),
         centerTitle: true,
@@ -108,12 +108,15 @@ class _LoginPageState extends State<LoginPage> {
                             ),
                           );
                         },
-                        child: Text(
-                          'Kayıt Ol',
-                          style: TextStyle(
-                              color: AppColors.bgColorBtn,
-                              fontSize: 18,
-                              decoration: TextDecoration.underline),
+                        child: GestureDetector(
+                          onTap: () => Get.to(const RegisterPage()),
+                          child: Text(
+                            'Kayıt Ol',
+                            style: TextStyle(
+                                color: AppColors.bgColorBtn,
+                                fontSize: 18,
+                                decoration: TextDecoration.underline),
+                          ),
                         )),
                   ],
                 ),

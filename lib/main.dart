@@ -1,5 +1,5 @@
-import 'package:dil_savaslari/loading_page.dart';
 import 'package:dil_savaslari/view/auth/login_page.dart';
+import 'package:dil_savaslari/view/auth/register_page.dart';
 import 'package:dil_savaslari/view/auth/welcome_page.dart';
 import 'package:dil_savaslari/view/home/home_page.dart';
 import 'package:flutter/material.dart';
@@ -26,7 +26,7 @@ class MyApp extends StatelessWidget {
     return const GetMaterialApp(
       title: 'Dil Savaslari',
       debugShowCheckedModeBanner: false,
-      home: HomePage(),
+      home: RegisterPage(),
     );
   }
 }
